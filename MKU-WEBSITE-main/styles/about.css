@@ -320,6 +320,8 @@ body {
   border: 1px solid rgba(15, 103, 179, 0.08);
   position: relative;
   overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .overview-text::before {
@@ -346,6 +348,8 @@ body {
   line-height: 1.9;
   color: #334155;
   margin-bottom: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .overview-text p:first-of-type::first-letter {
@@ -375,16 +379,33 @@ body {
 
 @media (max-width: 768px) {
   .overview-section {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .overview-text {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
   }
 
   .overview-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
   }
 
   .overview-text p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .overview-text p:first-of-type::first-letter {
+    font-size: 3rem;
+    margin-right: 0.5rem;
+  }
+
+  .overview-text p:last-of-type {
+    padding: 1rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -979,6 +1000,38 @@ body {
   .mku-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .overview-section {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .overview-text {
+    padding: 1.5rem 1rem;
+    border-radius: 1.2rem;
+  }
+
+  .overview-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-text p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .overview-text p:first-of-type::first-letter {
+    font-size: 2.5rem;
+    margin-right: 0.4rem;
+  }
+
+  .overview-text p:last-of-type {
+    padding: 0.8rem;
+    font-size: 0.8rem;
   }
 }
 
