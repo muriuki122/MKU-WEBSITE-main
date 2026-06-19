@@ -174,7 +174,7 @@ body {
   inset: 0;
   background:
     linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)),
-    url('https://picsum.photos/id/128/1920/500');
+    url('../images/lab-image-1.jpeg');
   background-size: cover;
   opacity: 0.2;
   mix-blend-mode: overlay;
