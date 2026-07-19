@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKU Research Gallery — Placenta Research Quality</title>
+    <link rel="stylesheet" href="styles/garaly.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Animated Background Mesh -->
+    <div class="bg-mesh">
+        <div class="mesh-orb mesh-orb--1"></div>
+        <div class="mesh-orb mesh-orb--2"></div>
+        <div class="mesh-orb mesh-orb--3"></div>
+        <div class="mesh-orb mesh-orb--4"></div>
+    </div>
+
+    <!-- Header / Navigation Tab Bar -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__brand">
+                <div class="header__logo">
+                    <span class="header__logo-icon">M</span>
+                </div>
+                <div class="header__brand-text">
+                    <span class="header__univ">Mount Kenya University</span>
+                    <span class="header__dept">Placenta Research Quality Unit</span>
+                </div>
+            </div>
+            <nav class="header__nav">
+                <a href="#" class="header__link">Home</a>
+                <a href="#" class="header__link">About</a>
+                <a href="#" class="header__link header__link--active">Gallery</a>
+                <a href="#" class="header__link">Publications</a>
+                <a href="#" class="header__link">Contact</a>
+            </nav>
+            <button class="header__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i data-lucide="menu" class="header__menu-icon"></i>
+            </button>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="header__mobile-nav" id="mobileNav">
+            <a href="#" class="header__mobile-link">Home</a>
+            <a href="#" class="header__mobile-link">About</a>
+            <a href="#" class="header__mobile-link header__mobile-link--active">Gallery</a>
+            <a href="#" class="header__mobile-link">Publications</a>
+            <a href="#" class="header__mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <span class="hero__badge">
+                <i data-lucide="microscope" class="hero__badge-icon"></i>
+                Research Team
+            </span>
+            <h1 class="hero__title">Placenta Research<br><em>Quality</em> Gallery</h1>
+            <p class="hero__subtitle">Meet the dedicated researchers driving excellence in placental health, quality assessment, and maternal-fetal medicine at MKU.</p>
+            <div class="hero__stats">
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="12">0</span>
+                    <span class="hero__stat-label">Researchers</span>
+                </div>
+                <div class="hero__stat-divider"></div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="47">0</span>
+                    <span class="hero__stat-label">Publications</span>
+                </div>
+                <div class="hero__stat-divider"></div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="8">0</span>
+                    <span class="hero__stat-label">Grants</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-bar">
+        <div class="filter-bar__container">
+            <div class="filter-bar__tabs" id="filterTabs">
+                <button class="filter-tab filter-tab--active" data-filter="all">
+                    <i data-lucide="layout-grid" class="filter-tab__icon"></i>
+                    All Members
+                </button>
+                <button class="filter-tab" data-filter="lead">
+                    <i data-lucide="crown" class="filter-tab__icon"></i>
+                    Lead Researchers
+                </button>
+                <button class="filter-tab" data-filter="postdoc">
+                    <i data-lucide="flask-conical" class="filter-tab__icon"></i>
+                    Post-Doctoral
+                </button>
+                <button class="filter-tab" data-filter="phd">
+                    <i data-lucide="graduation-cap" class="filter-tab__icon"></i>
+                    PhD Scholars
+                </button>
+                <button class="filter-tab" data-filter="assistant">
+                    <i data-lucide="users" class="filter-tab__icon"></i>
+                    Research Assistants
+                </button>
+            </div>
+            <div class="filter-bar__search">
+                <i data-lucide="search" class="filter-bar__search-icon"></i>
+                <input type="text" class="filter-bar__input" id="searchInput" placeholder="Search by name or specialty...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <main class="gallery">
+        <div class="gallery__grid" id="galleryGrid">
+            <!-- Cards injected by JavaScript -->
+        </div>
+        <div class="gallery__empty" id="emptyState" style="display:none;">
+            <i data-lucide="search-x" class="gallery__empty-icon"></i>
+            <h3>No Members Found</h3>
+            <p>Try adjusting your search or filter criteria.</p>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__overlay" id="lightboxOverlay"></div>
+        <div class="lightbox__card" id="lightboxCard">
+            <button class="lightbox__close" id="lightboxClose" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="lightbox__image-wrap">
+                <img class="lightbox__image" id="lightboxImage" src="" alt="">
+                <div class="lightbox__image-overlay"></div>
+            </div>
+            <div class="lightbox__body">
+                <span class="lightbox__role-badge" id="lightboxRole"></span>
+                <h2 class="lightbox__name" id="lightboxName"></h2>
+                <p class="lightbox__title" id="lightboxTitle"></p>
+                <div class="lightbox__divider"></div>
+                <div class="lightbox__info">
+                    <div class="lightbox__info-item">
+                        <i data-lucide="book-open" class="lightbox__info-icon"></i>
+                        <div>
+                            <span class="lightbox__info-label">Research Focus</span>
+                            <span class="lightbox__info-value" id="lightboxFocus"></span>
+                        </div>
+                    </div>
+                    <div class="lightbox__info-item">
+                        <i data-lucide="mail" class="lightbox__info-icon"></i>
+                        <div>
+                            <span class="lightbox__info-label">Email</span>
+                            <span class="lightbox__info-value" id="lightboxEmail"></span>
+                        </div>
+                    </div>
+                    <div class="lightbox__info-item">
+                        <i data-lucide="file-text" class="lightbox__info-icon"></i>
+                        <div>
+                            <span class="lightbox__info-label">Publications</span>
+                            <span class="lightbox__info-value" id="lightboxPubs"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="lightbox__bio" id="lightboxBio"></p>
+                <div class="lightbox__tags" id="lightboxTags"></div>
+                <div class="lightbox__actions">
+                    <a href="#" class="lightbox__btn lightbox__btn--primary">
+                        <i data-lucide="external-link"></i>
+                        View Profile
+                    </a>
+                    <a href="#" class="lightbox__btn lightbox__btn--secondary">
+                        <i data-lucide="mail"></i>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">&copy; 2025 Mount Kenya University — Placenta Research Quality Unit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/garaly.js"></script>
+</body>
+</html>

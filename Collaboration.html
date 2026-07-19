@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKU Placenta Hub · Global Collaboration</title>
+  <!-- Fonts & Icons (kept in HTML for simplicity) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Separate CSS file -->
+  <link rel="stylesheet" href="styles/collaboration.css">
+</head>
+<body>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header collaboration-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area">
+        <div class="logo-icon"><i class="fas fa-microscope"></i></div>
+        <div class="logo-text">
+          <strong>MKU Placenta Hub</strong>
+          <span>Global Collaboration Network</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="publication.html">Publications</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="Collaboration.html" class="active">Collaboration</a></li>
+          <li><a href="contact.html" class="contact-btn">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="publication.html">Publications</a>
+      <a href="community.html">Community</a>
+      <a href="Collaboration.html" class="active">Collaboration</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- Search (floating below header) -->
+  <div id="searchWrap">
+    <div id="searchBox">
+      <i class="fas fa-search" id="searchIcon"></i>
+      <input type="text" id="searchInput" placeholder="Search a country..." autocomplete="off" aria-label="Search country">
+      <button id="clearSearch" aria-label="Clear search"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="searchResults" role="listbox"></div>
+  </div>
+
+  <!-- Spotlight & Controls Panel (Left side) -->
+  <div id="spotlightPanel" class="glass-panel">
+    <div class="panel-section">
+      <h3><i class="fas fa-satellite-dish text-accent animate-pulse"></i> Network Activity</h3>
+      <div class="activity-feed">
+        <div class="activity-item">
+          <span class="activity-badge latest">Latest</span>
+          <p><strong>Wellcome Trust Award</strong>: Joint project active with Cambridge & Lagos University.</p>
+        </div>
+        <div class="activity-item">
+          <span class="activity-badge highlight">Highlight</span>
+          <p><strong>Placenta-on-a-Chip</strong>: Microfluidic drug testing partnership with Lyon, France.</p>
+        </div>
+        <div class="activity-item">
+          <span class="activity-badge update">Update</span>
+          <p><strong>Malaria Pathology</strong>: Clinical sampling ongoing in Kano & Primigravidae cohorts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel-section-divider"></div>
+    <div class="panel-section">
+      <h3><i class="fas fa-sliders-h text-accent"></i> Globe Settings</h3>
+      <div class="control-row">
+        <label for="rotateToggle">Auto-Rotation</label>
+        <label class="switch">
+          <input type="checkbox" id="rotateToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="control-row">
+        <label for="atmosphereToggle">Atmosphere Glow</label>
+        <label class="switch">
+          <input type="checkbox" id="atmosphereToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Globe container -->
+  <div id="globeWrap"></div>
+
+  <!-- Side Panel -->
+  <div id="sidePanel">
+    <div id="panelHeader">
+      <div>
+        <h2 id="panelTitle"></h2>
+        <p id="panelSubtitle"></p>
+      </div>
+      <button id="closePanel" aria-label="Close panel"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="panelBody"></div>
+  </div>
+
+  <!-- Bottom Stats -->
+  <div id="bottomStats">
+    <div class="bstat"><span id="sCountries">0</span>Countries</div>
+    <div class="bstat"><span id="sCollabs">0</span>Collaborators</div>
+    <div class="bstat"><span id="sContinents">0</span>Continents</div>
+  </div>
+
+  <!-- Instruction hint -->
+  <div id="hint">
+    <i class="fas fa-hand-pointer"></i>
+    Search a country above or drag the globe to explore
+  </div>
+
+  <!-- Import Map for Three.js (kept in HTML) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <!-- Separate JavaScript file (module) -->
+  <script type="module" src="scripts/collaboration.js"></script>
+</body>
+</html>
