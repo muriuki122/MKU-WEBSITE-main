@@ -253,7 +253,7 @@ h3 {
 
 .hero-research {
   position: relative;
-  min-height: 50vh;
+  min-height: clamp(360px, 46vh, 520px);
   display: flex;
   align-items: center;
   background: #020617;
@@ -686,7 +686,9 @@ h3 {
 }
 
 .index-img-wrapper {
-  height: 200px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  max-height: 210px;
   overflow: hidden;
   position: relative;
   background: #f8fafc;
@@ -925,12 +927,34 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .hero-research {
+    min-height: 58vh;
+  }
+
+  .hero-bg-overlay {
+    background-position: center top;
+  }
+
   .hero-content h1 {
     font-size: 2.2rem;
   }
 
   .pillars-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-icon {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: 260px;
+    border-radius: 1.25rem;
+  }
+
+  .index-img-wrapper {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    max-height: 300px;
   }
 
   .cta-card {
